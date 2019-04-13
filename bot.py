@@ -37,20 +37,10 @@ def accept(message):
     if a > 7:
         bot.send_message(message.chat.id, random.choice(accept_list))
 #^ Здесь бот подтверждает или не подтверждает
-    if l <= 12 and l >= 10:
+    if l <= 13 and l >= 11:
         bot.send_message(message.chat.id, random.choice(love))
 #^ Здесь бот меня любит
 
 
 
 bot.polling()
-
-
-
-
-
-
-
-
-
-
