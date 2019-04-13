@@ -17,26 +17,35 @@ joke = ['''
 Филин:
 – Подтверждаю.
 ''']
-accept_list = ['Не подтверждаю', 'Подтверждаю']
-fil = list(set(range(1, 6)))
-
 
 @bot.message_handler(func=lambda message: message, content_types=['text'])
 def accept(message):
+    accept_list = ['Не подтверждаю', 'Подтверждаю']
+    love = ['Я тебя люблю, хозяин!', 'Of course, master!', 'Конечно, хозяин!', 'По другому быть не может.']
     text = message.text
-    c = 0
+    a = 0
+    l = 0
     accept = ['п', 'о', 'д', 'т', 'в', 'е', 'р', 'д', 'и']
+    lovely = ['Т', 'ы', 'м', 'е', 'н', 'я', 'л', 'ю', 'б', 'и', 'ш', 'ь', '?']
     for i in text:
         if i in accept:
-            accept[c] = ''
-            c += 1
-    if c > 6:
+            accept[a] = ''
+            a += 1
+        if i in lovely:
+            lovely[l] = ''
+            l += 1
+    if a > 7:
         bot.send_message(message.chat.id, random.choice(accept_list))
-    if random.choice(fil) == 1:
-        bot.send_message(message.chat.id, 'Я люблю тебя ,хозяин!')
+#^ Здесь бот подтверждает или не подтверждает
+    if l > 10:
+        bot.send_message(message.chat.id, random.choice(love))
+#^ Здесь бот меня любит
+
 
 
 bot.polling()
+
+
 
 
 
