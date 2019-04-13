@@ -26,7 +26,7 @@ def accept(message):
     a = 0
     l = 0
     accept = ['п', 'о', 'д', 'т', 'в', 'е', 'р', 'д', 'и']
-    lovely = ['Т', 'ы', 'м', 'е', 'н', 'я', 'л', 'ю', 'б', 'и', 'ш', 'ь', '?']
+    lovely = ['т', 'ы', 'м', 'е', 'н', 'я',  'н', 'е', 'л', 'ю', 'б', 'и', 'ш', 'ь', '?']
     for i in text:
         if i in accept:
             accept[a] = ''
@@ -37,7 +37,7 @@ def accept(message):
     if a > 7:
         bot.send_message(message.chat.id, random.choice(accept_list))
 #^ Здесь бот подтверждает или не подтверждает
-    if l > 12:
+    if l < 12 and l > 10:
         bot.send_message(message.chat.id, random.choice(love))
 #^ Здесь бот меня любит
 
